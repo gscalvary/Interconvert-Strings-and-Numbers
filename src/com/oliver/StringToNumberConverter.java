@@ -1,13 +1,14 @@
 package com.oliver;
 
+// O(1) space complexity and O(n) time complexity where n is the length of the string being converted.
 public class StringToNumberConverter {
 
-    public int convert(String input) {
+    public double convert(String input) {
 
         if (input == null || input.length() == 0) throw new IllegalArgumentException("Input must contain characters.");
 
         boolean isNegative = (input.charAt(0) == '-');
-        int answer = 0;
+        double answer = 0;
 
         for(int i = input.length() - 1, tens = 1; i >= (isNegative ? 1: 0); i--, tens *= 10) {
             switch (input.charAt(i)) {
